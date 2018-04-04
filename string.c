@@ -3,12 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-
-char string1[] = "apple";
-char string2[] = "pepper";
-
-char string3[] = "Hello to the world";
-
 void stringCompare(char string1[], char string2[])
 {
 	
@@ -18,22 +12,14 @@ void stringCompare(char string1[], char string2[])
 	printf("string 1: %s \n",string1);
 	printf("string 2: %s \n",string2);
 	
-	
-	if (string1Length > string2Length)
-		maxLength = string1Length;
+	if (string1Length != string2Length){
+		printf("string is different\n");
+		return;}
 	else
-		maxLength = string2Length;
-	printf("maxLength: %u\n",maxLength);
-
-	for(int i = 0; i<=maxLength; i++)
-	{
-		if(string1[i] == string2[i])
-		{
-			
-			printf("%c\n",string1[i]);
+		for(int i = 0; i<string1Length; i++){
+			if(string1[i] == string2[i])
+				printf("identical char %u,  %u\n", string1[i],string[2]);
 		}
-		
-	}
 }
 
 void reverseString(char string3[])
@@ -97,6 +83,9 @@ void identicalVal(int a[],int n)
 
 int main()
 {
+	char string1[] = "apple";
+	char string2[] = "pepper";
+	char string3[] = "Hello to the world";
 	stringCompare(string1, string2);
 	stringReverse(string3);
 	int a[6] = {1,2,3,4,1,6};
